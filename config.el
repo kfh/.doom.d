@@ -62,6 +62,9 @@
 ;; Format Go code when saving
 (add-hook 'before-save-hook 'gofmt-before-save)
 
+;; Format Terraform code when saving
+(add-hook 'terraform-mode-hook 'terraform-format-on-save-mode)
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
