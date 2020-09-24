@@ -32,7 +32,7 @@
 (setq doom-theme 'doom-one)
 
 ;; If you intend to use org, it is recommended you change this!
-(setq org-directory "~/org/")
+;;(setq org-directory "~/org/")
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
@@ -52,6 +52,15 @@
 
 ;; Split window vertically and go to
 (setq evil-vsplit-window-right t)
+
+;; Enable gorepl-mode in go-mode buffers
+(add-hook 'go-mode-hook #'gorepl-mode)
+
+;; Enable go-imports
+(setq gofmt-command "goimports")
+
+;; Format Go code when saving
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
